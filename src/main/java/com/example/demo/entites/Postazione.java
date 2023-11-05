@@ -1,12 +1,13 @@
-package entites;
+package com.example.demo.entites;
 
-import enums.PostazioneType;
+
+import com.example.demo.enums.PostazioneType;
 import jakarta.persistence.*;
 
 import java.util.List;
 
 @Entity
-@Table(name = "prenotazioni")
+@Table(name = "postazione")
 public class Postazione {
 @Id
     @GeneratedValue
@@ -16,7 +17,7 @@ private PostazioneType tipo;
 private int maxNumeroPersone;
 
 @OneToOne
-    @JoinColumn(name = "building_id")
+    @JoinColumn(name = "officio_id")
     private Officio officio;
 
 @OneToMany(mappedBy = "postazione")

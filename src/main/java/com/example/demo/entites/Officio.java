@@ -1,4 +1,4 @@
-package entites;
+package com.example.demo.entites;
 
 import jakarta.persistence.*;
 
@@ -12,7 +12,7 @@ public class Officio {
     private String via;
     private String citta;
 
-    @OneToOne(mappedBy = "postazione")
+    @OneToOne(mappedBy = "officio")
     private Postazione postazione;
 
     public Officio() {
