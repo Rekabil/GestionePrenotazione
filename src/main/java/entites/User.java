@@ -1,9 +1,8 @@
 package entites;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table
@@ -11,4 +10,9 @@ public class User {
     @Id
     @GeneratedValue
     private long Id;
+    private String name;
+    private String cognome;
+    private String email;
+    @OneToMany(mappedBy = "user")
+    private List<Prenotazione> listaPrenotazioni;
 }
